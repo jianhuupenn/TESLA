@@ -2,7 +2,7 @@
 
 ## TESLA: Deciphering tumor ecosystems at super-resolution from spatial transcriptomics 
 
-### Jian Hu*,  Kyle Coleman, Edward B. Lee, Humam Kadara, Linghua Wang*, Mingyao Li1*
+### Jian Hu*,  Kyle Coleman, Edward B. Lee, Humam Kadara, Linghua Wang*, Mingyao Li*
 
 TESLA (Tumor Edge Structure and Lymphocyte multi-level Annotation) is a machine learning framework for multi-level tissue annotation on the histology image with pixel-level resolution in Spatial Transcriptomics (ST). By integrating information from high-resolution histology image, TESLA can impute gene expression at superpixels and fill in missing gene expression in tissue gaps. The increased gene expression resolution makes it possible to treat gene expression data as images, which enabled the integration with histological features for joint tissue segmentation and annotation of different cell types directly on the histology image with pixel-level resolution. Additionally, TESLA can detect unique structures of tumor immune microenvironment such as Tertiary Lymphoid Structures (TLSs), , separate a tumor into core and edge to examine their cellular compositions, expression features, and molecular processes. TESLA has been evaluated on five cancer datasets. Our results consistently showed that TESLA can generate high-quality super-resolution gene expression images, which facilitated the downstream multi-level tissue annotation.
 ![TESLA workflow](docs/asserts/images/workflow.jpg)
