@@ -21,7 +21,7 @@ The [**TESLA**](https://github.com/jianhuupenn/TESLA) package is an implementati
 <br>
 For tutorial, please refer to: 
 <br>
-A Jupyter Notebook of the tutorial is accessible from : 
+A Jupyter Notebook of the tutorial is accessible from : https://github.com/jianhuupenn/TESLA/blob/main/tutorial/tutorial.ipynb
 <br>
 Please install jupyter in order to open this notebook.
 <br>
