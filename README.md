@@ -19,13 +19,13 @@ The [**TESLA**](https://github.com/jianhuupenn/TESLA) package is an implementati
 - Annotate user-defined cell types at pixel resolution;
 - Characterize the intra-tumor heterogeneity, e.g,  the tumor leading edge, tumor core and edge, tumor subtypes.
 <br>
-For tutorial, please refer to: 
+For tutorial, please refer to: https://github.com/jianhuupenn/TESLA/blob/main/tutorial/tutorial.md
 <br>
 A Jupyter Notebook of the tutorial is accessible from : https://github.com/jianhuupenn/TESLA/blob/main/tutorial/tutorial.ipynb
 <br>
 Please install jupyter in order to open this notebook.
 <br>
-Toy data and results can be downloaded at: 
+Toy data and results can be downloaded at: https://drive.google.com/drive/folders/1hC6ldkxmZX0yiCWZR57iMXjWIIm9qUJU?usp=sharing
 
 ## System Requirements
 Python support packages: torch, pandas, numpy, scipy, scanpy > 1.5, anndata, sklearn, cv2.
@@ -34,7 +34,12 @@ Python support packages: torch, pandas, numpy, scipy, scanpy > 1.5, anndata, skl
 Environment 1:
 - System: Mac OS 10.13.6
 - Python: 3.7.0
-- Python packages: pandas = 1.1.3, numpy = 1.18.1, torch=1.5.1,louvain=0.6.1,scipy = 1.4.1, scanpy = 1.5.1, anndata = 0.6.22.post1, natsort = 7.0.1, sklearn = 0.22.1, cv2=4.5.1.
+- Python packages: pandas = 1.1.3, numpy = 1.18.1, torch=1.5.1,louvain=0.6.1,scipy = 1.4.1, scanpy = 1.5.1, anndata = 0.6.22.post1, sklearn = 0.22.1, cv2=4.5.1.
+<br>
+Environment 2:
+- System: Anaconda
+- Python: 3.7.9
+- Python packages: pandas = 1.1.3, numpy = 1.20.2, python-igraph=0.8.3, torch=1.6.0,louvain=0.7.0, scipy = 1.5.2, scanpy = 1.6.0, anndata = 0.7.4,  sklearn = 0.23.3, cv2=4.5.1
 
 
 ## Contributing
