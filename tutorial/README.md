@@ -35,12 +35,9 @@ Now you can install the current release of SpaGCN by the following three ways:
 
 
 ```python
-pip3 install TESLA
-#Note: you need to make sure that the pip is for python3，or we should install SpaGCN by
-python3 -m pip install TESLA
-pip3 install TESLA
+pip3 install TESLAforST
 #If you do not have permission (when you get a permission denied error), you should install SpaGCN by
-pip3 install --user TESLA
+pip3 install --user TESLAforST
 ```
 
 #### 1.2 Github
@@ -48,7 +45,7 @@ Download the package from Github and install it locally:
 
 
 ```python
-git clone https://github.com/jianhuupenn/SpaGCN
+git clone https://github.com/jianhuupenn/TESLA
 cd ./TESLA/TESLA_package/
 python3 setup.py install --user
 ```
