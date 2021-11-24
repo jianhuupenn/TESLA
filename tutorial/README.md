@@ -28,15 +28,15 @@ platform.python_version()
 
 
 
-Note: Because SpaGCN pends on pytorch, you should make sure torch is correctly installed.
+Note: Because TESLA pends on pytorch, you should make sure torch is correctly installed.
 <br>
-Now you can install the current release of SpaGCN by the following three ways:
+Now you can install the current release of TESLA by the following three ways:
 #### 1.1 PyPI: Directly install the package from PyPI.
 
 
 ```python
 pip3 install TESLAforST
-#If you do not have permission (when you get a permission denied error), you should install SpaGCN by
+#If you do not have permission (when you get a permission denied error), you should install TESLA by
 pip3 install --user TESLAforST
 ```
 
@@ -51,7 +51,7 @@ python3 setup.py install --user
 ```
 
 #### 1.3 Anaconda ()
-If you do not have Python3.5 or Python3.6 installed, consider installing Anaconda (see Installing Anaconda). After installing Anaconda, you can create a new environment, for example, SpaGCN (you can change to any name you like).
+If you do not have Python3.5 or Python3.6 installed, consider installing Anaconda (see Installing Anaconda). After installing Anaconda, you can create a new environment, for example, TESLA (you can change to any name you like).
 
 
 ```python
