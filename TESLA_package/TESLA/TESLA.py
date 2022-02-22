@@ -24,7 +24,7 @@ class TESLA(object):
 		minLabels=20, 
 		maxIter=30, 
 		stepsize_sim=1, 
-		stepsize_con=5, 
+		stepsize_con=10, 
 		threshold=1000,
 		plot_intermedium=False,
 		plot_dir="./"):
@@ -98,7 +98,7 @@ class TESLA(object):
 							replace_map[i]=nbs_num.index[nbs_num.index.isin(main_clusters)][0]
 				target=torch.from_numpy(pd.Series(img_target).replace(replace_map).to_numpy())
 			#------------------------------------------------------------------
-			loss1 = stepsize_sim * loss_fn(output, target) + stepsize_con * (lhpy + lhpz)
+			loss1 = stepsize_sim * loss_fn(output, target)
 			loss2 = stepsize_con * (lhpy + lhpz)
 			loss=loss1+loss2
 			loss.backward()
