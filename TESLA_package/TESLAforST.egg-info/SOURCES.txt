@@ -2,12 +2,14 @@ README.md
 setup.py
 TESLA/ConnectedComponents.py
 TESLA/TESLA.py
+TESLA/TLS_detection.py
 TESLA/__init__.py
 TESLA/annotation.py
 TESLA/calculate_dis.py
 TESLA/contour_util.py
 TESLA/imputation.py
 TESLA/models.py
+TESLA/tumor_edge_core.py
 TESLA/util.py
 TESLAforST.egg-info/PKG-INFO
 TESLAforST.egg-info/SOURCES.txt
