@@ -4,13 +4,15 @@
 <center>Author: Jian Hu*,  Kyle Coleman, Edward B. Lee, Humam Kadara, Linghua Wang*, Mingyao Li*
 
 ## Outline
-#### 1. Installation
-#### 2. Import modules
-#### 3. Read in data
-#### 4. Gene expression enhancement
-#### 5. Region annotation
-#### 6. Characterize the intra-tumor heterogeneity
-#### 7. TLS detection
+1. [Installation](https://github.com/jianhuupenn/SpaGCN/blob/master/tutorial/tutorial.md#1-installation)
+
+#### 1. [Installation](https://github.com/jianhuupenn/TESLA/blob/main/tutorial/tutorial.md#1-installation-1)
+#### 2. [Import modules](https://github.com/jianhuupenn/TESLA/blob/main/tutorial/tutorial.md#2-import-python-modules)
+#### 3. [Read in data](https://github.com/jianhuupenn/TESLA/blob/main/tutorial/tutorial.md#3-read-in-data-1)
+#### 4. [Gene expression enhancement](https://github.com/jianhuupenn/TESLA/blob/main/tutorial/tutorial.md#4-gene-expression-enhancement-1)
+#### 5. [Region annotation](https://github.com/jianhuupenn/TESLA/blob/main/tutorial/tutorial.md#5-region-annotation-1)
+#### 6. [Characterize the intra-tumor heterogeneity](https://github.com/jianhuupenn/TESLA/blob/main/tutorial/tutorial.md#6-characterize-the-intra-tumor-heterogeneity-1)
+#### 7. [TLS detection](https://github.com/jianhuupenn/TESLA/blob/main/tutorial/tutorial.md#7-tls-detection-1)
 
 ### 1. Installation
 To install TESLA package you must make sure that your python version is over 3.5.=. If you don’t know the version of python you can check it by:
@@ -441,19 +443,6 @@ df_edge_filtered
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -689,11 +678,6 @@ cluster_density_list=[c_d1, c_d2, c_d3, c_d4]
 
 
 ```python
-cluster_density_list=[{9: 0.3475183859247766, 8: 0.20281905545654758},
-                      {9: 0.36923992651041304, 5: 0.2798717703860183},
-                      {10: 0.4262578289741636},
-                      {9: 0.4466834992921865, 7: 0.3339196160263545, 13: 0.2764052169986122, 5: 0.22543481792572062}]
-
 cnt_color = clr.LinearSegmentedColormap.from_list('red', ["#EAE7CC", '#BA0000'], N=256)
 num_required=3
 tls_score=tesla.TLS_detection(pred_refined_list, cluster_density_list, num_required, cnt_color)
