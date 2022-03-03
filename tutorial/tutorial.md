@@ -4,8 +4,6 @@
 <center>Author: Jian Hu*,  Kyle Coleman, Edward B. Lee, Humam Kadara, Linghua Wang*, Mingyao Li*
 
 ## Outline
-1. [Installation](https://github.com/jianhuupenn/SpaGCN/blob/master/tutorial/tutorial.md#1-installation)
-
 #### 1. [Installation](https://github.com/jianhuupenn/TESLA/blob/main/tutorial/tutorial.md#1-installation-1)
 #### 2. [Import modules](https://github.com/jianhuupenn/TESLA/blob/main/tutorial/tutorial.md#2-import-python-modules)
 #### 3. [Read in data](https://github.com/jianhuupenn/TESLA/blob/main/tutorial/tutorial.md#3-read-in-data-1)
