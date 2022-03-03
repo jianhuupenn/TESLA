@@ -293,7 +293,7 @@ pred_refined, target_clusters, c_m=tesla.annotation(img=img,
                                                     resize_factor=resize_factor,
                                                     target_size="small")
 #Plot
-ret_img=tesla.plot_annotation(img=img, 
+ret_img=tesla.visualize_annotation(img=img, 
                               binary=binary, 
                               resize_factor=resize_factor,
                               pred_refined=pred_refined, 
