@@ -1,4 +1,4 @@
-# TESLA v1.0.0
+# TESLA v1.1.0
 
 ## TESLA: Deciphering tumor ecosystems at super-resolution from spatial transcriptomics 
 
