@@ -71,6 +71,7 @@ conda deactivate
 
 ```python
 import os,csv,re, time
+import pickle
 import random
 import warnings
 warnings.filterwarnings('ignore')
@@ -284,11 +285,13 @@ enhanced_exp_adata.write_h5ad("./results/enhanced_exp.h5ad")
 #For example, if we want to annotate tumor region, use tumor markers
 genes=['BUB1B', 'KIF1C','TOP2A', 'CD151', 'MMP10', 'PTHLH','FEZ1','IL24','KCNMA','INHBA','MAGEA4','NT5E','LAMC2','SLITRK6']
 genes=list(set([i for i in genes if i in enhanced_exp_adata.var.index ]))
+#target_size can be set to "small" or "large".
 pred_refined, target_clusters, c_m=tesla.annotation(img=img, 
                                                     binary=binary,
                                                     sudo_adata=enhanced_exp_adata, 
                                                     genes=genes, 
-                                                    resize_factor=resize_factor)
+                                                    resize_factor=resize_factor,
+                                                    target_size="small")
 #Plot
 ret_img=tesla.plot_annotation(img=img, 
                               binary=binary, 
@@ -332,12 +335,16 @@ Image(filename='./results/tumor.jpg')
 #Save
 np.save("./results/tumor_annotation.npy", pred_refined)
 print("Target_clusters: ", target_clusters, "\n")
-print("c_m: ", c_m)
+#Save the cluster density information
+c_d={i[0]:i[1] for i in c_m[0:len(target_clusters)]}
+print("Cluster_density : ", c_d)
+with open('./results/tumor_annotation_c_d.pkl', 'wb') as f: pickle.dump(c_d, f)
+
 ```
 
     Target_clusters:  [6, 2, 15, 19, 12, 10, 4, 14, 17, 13] 
     
-    c_m:  [(6, 0.660496668592895), (2, 0.5849543163588522), (15, 0.5158497030203698), (19, 0.48606369815923994), (12, 0.4802130752317957), (10, 0.4580134991936973), (4, 0.45732190334046835), (14, 0.43235966925018005), (17, 0.3388222879213612), (13, 0.3331709370762233), (16, 0.3160079580858375), (9, 0.2478758789018975), (8, 0.21917223597411475), (7, 0.20651287130232146), (3, 0.19796864337328288), (11, 0.19742332922793465), (20, 0.15788060926103378), (1, 0.14535831267938887), (5, 0.1265518524797657), (18, 0.024549401709053432), (0, 0.0)]
+    Cluster_density :  {6: 0.660496668592895, 2: 0.5849543163588522, 15: 0.5158497030203698, 19: 0.48606369815923994, 12: 0.4802130752317957, 10: 0.4580134991936973, 4: 0.45732190334046835, 14: 0.43235966925018005, 17: 0.3388222879213612, 13: 0.3331709370762233}
 
 
 ### 6. Characterize the intra-tumor heterogeneity
@@ -660,13 +667,22 @@ Image(filename='./results/CXCL12.jpg')
 
 
 ```python
-#---------------------------------1. TLS detection ----------------------------------#
 cnt_color = clr.LinearSegmentedColormap.from_list('red', ["#EAE7CC", '#BA0000'], N=256)
 pred_refined1=np.load("./results/B_annotation.npy")
 pred_refined2=np.load("./results/CD4+T_annotation.npy")
 pred_refined3=np.load("./results/DC_annotation.npy")
 pred_refined4=np.load("./results/CXCL13_annotation.npy")
 pred_refined_list=[pred_refined1, pred_refined2, pred_refined3, pred_refined4]
+#Read in cluster_density information
+with open('./results/B_annotation_c_d.pkl', 'rb') as f: c_d1 = pickle.load(f)
+
+with open('./results/CD4+T_annotation_c_d.pkl', 'rb') as f: c_d2 = pickle.load(f)
+
+with open('./results/DC_annotation_c_d.pkl', 'rb') as f: c_d3 = pickle.load(f)
+
+with open('./results/CXCL13_annotation_c_d.pkl', 'rb') as f: c_d4 = pickle.load(f)
+
+cluster_density_list=[c_d1, c_d2, c_d3, c_d4]
 ```
 
 #### 7.2 Calculate TLS score
