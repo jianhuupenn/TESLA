@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="TESLA", 
-    version="1.0.0",
+    name="TESLAforST", 
+    version="1.2.0",
     author="Jian Hu",
     author_email="jianhu@pennmedicine.upenn.edu",
     description="TESLA: Deciphering tumor ecosystems at super-resolution from spatial transcriptomics",

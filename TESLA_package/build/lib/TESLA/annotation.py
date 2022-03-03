@@ -27,8 +27,15 @@ def annotation(img,
 			minLabels=30, 
 			train_refine=True, 
 			plot_intermedium=False,
-			target_ratio=1/2):
+			target_size="small"):
 	#-------------------------------Image band-------------------------------------------------#
+	if target_size=="small":
+		target_ratio=1/2
+	elif target_size=="large":
+		target_ratio=1/3
+	else:
+		print("target_size not valid, Please specify (small / large).Use default small")
+		target_ratio=1/2
 	print("Computing image band...")
 	resize_width=int(img.shape[1]*resize_factor)
 	resize_height=int(img.shape[0]*resize_factor)
