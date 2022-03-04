@@ -679,7 +679,7 @@ cluster_density_list=[c_d1, c_d2, c_d3, c_d4]
 cnt_color = clr.LinearSegmentedColormap.from_list('red', ["#EAE7CC", '#BA0000'], N=256)
 num_required=3
 tls_score=tesla.TLS_detection(pred_refined_list, cluster_density_list, num_required, cnt_color)
-img_tls=teslaplot_TLS_score(img, resize_factor, binary,tls_score, cnt_color)
+img_tls=tesla.plot_TLS_score(img, resize_factor, binary,tls_score, cnt_color)
 ```
 
 #### 7.3 Plot TLS score
