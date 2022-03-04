@@ -30,7 +30,7 @@ def plot_TLS_score(img, resize_factor, binary,target, cnt_color):
 	resize_width=int(img.shape[1]*resize_factor)
 	resize_height=int(img.shape[0]*resize_factor)
 	binary_resized=cv2.resize(binary, (resize_width, resize_height))
-	img_resized =cv2.resize(img_new, (resize_width, resize_height))
+	img_resized =cv2.resize(img, (resize_width, resize_height))
 	target_img=target.reshape(resize_height, resize_width)
 	target_img_rgb=(cnt_color((target*255).astype("int"))[:, 0:3]*255).reshape(resize_height, resize_width,3).astype( np.uint8 )
 	target_img_rgb=(cnt_color((target*255).astype("int"))[:, 0:3]*255).reshape(resize_height, resize_width,3).astype( np.uint8 )
