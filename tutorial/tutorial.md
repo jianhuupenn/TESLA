@@ -155,6 +155,7 @@ if issparse(counts.X):counts.X=counts.X.A
 
 ```python
 #Three different algorithms to detect contour, select the best one.Here we use cv2.
+#Important note: If you get incorrect contour for all of the 3thress metod, please double check your array_x, array_y, pixel_x, pixel_y are matched correctly.
 
 #-----------------1. Detect contour using cv2-----------------
 cnt=tesla.cv2_detect_contour(img, apertureSize=5,L2gradient = True)
