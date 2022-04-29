@@ -292,6 +292,7 @@ pred_refined, target_clusters, c_m=tesla.annotation(img=img,
                                                     sudo_adata=enhanced_exp_adata, 
                                                     genes=genes, 
                                                     resize_factor=resize_factor,
+                                                    num_required=1, 
                                                     target_size="small")
 #Plot
 ret_img=tesla.visualize_annotation(img=img, 
