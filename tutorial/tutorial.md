@@ -279,13 +279,12 @@ enhanced_exp_adata.write_h5ad("./results/enhanced_exp.h5ad")
 ### 5. Region annotation
 
 #### 5.1 Target region annotation
-
+Prefer choosing 5 to 10 marker genes.
+The default num_required=1.  If you include one gene that is not that specific (also highly expressed in other cell types), num_required+=1. For example, if you include 2 non-specific markers, please set num_required=3. 
 
 ```python
 #Select your gene list
 #For example, if we want to annotate tumor region, use tumor markers
-#Prefer choosing 5 to 10 marker genes.
-#The default num_required=1.  If you include one gene that is not that specific (also highly expressed in other cell types), num_required+=1. For example, if you include 2 non-specific markers, please set num_required=3. 
 genes=['BUB1B', 'KIF1C','TOP2A', 'CD151', 'MMP10', 'PTHLH','FEZ1','IL24','KCNMA','INHBA','MAGEA4','NT5E','LAMC2','SLITRK6']
 genes=list(set([i for i in genes if i in enhanced_exp_adata.var.index ]))
 #target_size can be set to "small" or "large".
