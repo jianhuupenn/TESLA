@@ -1,4 +1,4 @@
-__version__ = '1.2.2'
+__version__ = '1.2.4'
 from . TESLA import *
 from . util import *
 from . contour_util import *

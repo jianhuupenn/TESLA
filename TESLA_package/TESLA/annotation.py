@@ -27,7 +27,8 @@ def annotation(img,
 			minLabels=30, 
 			train_refine=True, 
 			plot_intermedium=False,
-			target_size="small"):
+			target_size="small",
+			min_UMI=5):
 	#-------------------------------Image band-------------------------------------------------#
 	if target_size=="small":
 		target_ratio=1/2
@@ -66,6 +67,8 @@ def annotation(img,
 		gene_img[int(x-res/2):int(x+res/2), int(y-res/2):int(y+res/2),0]=exp
 	gene_img[binary==0]=0
 	gene_band1=gene_img[:,:,0]
+	#Filter on min UMI
+	gene_band1[gene_band1<=np.log(min_UMI+1)]=0
 	gene_band1=cv2.resize(gene_band1, (resize_width, resize_height), interpolation = cv2.INTER_AREA)
 	gene_band1=(gene_band1-np.min(gene_band1))/(np.max(gene_band1)-np.min(gene_band1))
 	gene_band1=gene_band1.reshape(list(gene_band1.shape)+[1])
