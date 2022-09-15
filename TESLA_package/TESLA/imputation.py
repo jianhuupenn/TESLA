@@ -51,7 +51,7 @@ def imputation(img, raw, cnt, genes, shape="None", res=50, s=1, k=2, num_nbs=10)
 	sudo_adata.var=known_adata.var
 	#Impute using all spots, weighted
 	#Add a threshold
-	dis_threshold=np.quantile(dis.values, 0.3)
+	dis_threshold=np.quantile(dis.values, 3*num_nbs/known_adata.shape[0])
 	for i in range(sudo_adata.shape[0]):
 		if i%1000==0:print("Imputing spot", i)
 		index=sudo_adata.obs.index[i]
