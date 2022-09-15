@@ -57,13 +57,14 @@ def imputation(img, raw, cnt, genes, shape="None", res=50, s=1, k=2, num_nbs=10)
 		index=sudo_adata.obs.index[i]
 		dis_tmp=dis.loc[index, :].sort_values()
 		nbs=dis_tmp[0:num_nbs]
-		#Filter nbs here
-		nbs=nbs[nbs.values<=dis_threshold]
 		dis_tmp=(nbs.to_numpy()+0.1)/np.min(nbs.to_numpy()+0.1) #avoid 0 distance
 		if isinstance(k, int):
 			weights=((1/(dis_tmp**k))/((1/(dis_tmp**k)).sum()))
 		else:
 			weights=np.exp(-dis_tmp)/np.sum(np.exp(-dis_tmp))
+		#For superpixel have super far nbs, weights=0
+		if np.min(nbs.values)>dis_threshold:
+			weights=weights*0
 		row_index=[known_adata.obs.index.get_loc(i) for i in nbs.index]
 		sudo_adata.X[i, :]=np.dot(weights, known_adata.X[row_index,:])
 	return sudo_adata
