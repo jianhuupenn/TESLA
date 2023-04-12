@@ -1,6 +1,7 @@
 #Get connected components in an undirected graph
 import pandas as pd
 import numpy as np
+from collections import deque
 class Graph:
 	# init function to declare class variables
 	def __init__(self, V, adj):
@@ -17,11 +18,36 @@ class Graph:
 			if visited[i] == 0:
 				tmp = self.DFSUtil(i, tmp, visited)
 		return tmp
-	def ConnectedComponents(self):
+	def ConnectedComponentsDFS(self):
 		visited = pd.Series([0]* len(self.V), index=self.V)
 		cc = []
 		for v in self.V:
 			if visited[v] == 0:
 				tmp = []
 				cc.append(self.DFSUtil(v, tmp, visited))
+		return cc
+
+	def ConnectedComponents(self):
+		visited = pd.Series([0] * len(self.V), index=self.V)
+		cc = []
+		for v in self.V:
+			if visited[v] == 1:
+				continue
+
+			queue = deque([v])
+			visited[v] = 1
+			tmp = [v]
+			while len(queue) > 0:
+				elem = queue.pop()
+				nbrs = self.adj[elem][self.adj[elem] == 1].index.tolist()
+
+				for nbr in nbrs:
+					if visited[nbr] == 0:
+						queue.append(nbr)
+						visited[nbr] = 1
+						tmp.append(nbr)
+
+			if len(tmp) > 0:
+				cc.append(tmp)
+
 		return cc
