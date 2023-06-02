@@ -288,6 +288,7 @@ The default num_required=1.  If you include one gene that is not that specific (
 #For example, if we want to annotate tumor region, use tumor markers
 genes=['BUB1B', 'KIF1C','TOP2A', 'CD151', 'MMP10', 'PTHLH','FEZ1','IL24','KCNMA','INHBA','MAGEA4','NT5E','LAMC2','SLITRK6']
 genes=list(set([i for i in genes if i in enhanced_exp_adata.var.index ]))
+#Please drop genes with all 0 expression from the list since they are not infomrative.
 #target_size can be set to "small" or "large".
 pred_refined, target_clusters, c_m=tesla.annotation(img=img, 
                                                     binary=binary,
