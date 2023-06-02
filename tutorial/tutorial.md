@@ -281,7 +281,8 @@ enhanced_exp_adata.write_h5ad("./results/enhanced_exp.h5ad")
 #### 5.1 Target region annotation
 Prefer choosing 5 to 10 marker genes.
 <br>
-The default num_required=1.  If you include one gene that is not that specific (also highly expressed in other cell types), num_required+=1. For example, if you include 2 non-specific markers, please set num_required=3. Please drop genes with all 0 expression from the list since they are not infomrative.
+The default num_required=1.  If you include one gene that is not that specific (also highly expressed in other cell types), num_required+=1. For example, if you include 2 non-specific markers, please set num_required=3. 
+Please drop genes with all 0 expression from the list since they are not infomrative.
 
 ```python
 #Select your gene list
