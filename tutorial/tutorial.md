@@ -100,7 +100,8 @@ tesla.__version__
 
 
 ### 3. Read in data
-The current version of TESLA requres three input data: 
+The current version of TESLA requres three input data.
+<br>
 <br>
 1. The gene expression matrix(n by k): expression_matrix.h5;
 <br>
