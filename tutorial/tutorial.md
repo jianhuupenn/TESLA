@@ -394,6 +394,7 @@ Image(filename='./results/leading_edge.jpg')
 ```python
 shrink_rate=0.8
 res=50
+enhanced_exp_adata.obs.index = enhanced_exp_adata.obs.index.astype(str)
 binary_tumor, binary_core, core_edge_exp=tesla.tumor_edge_core_separation(img=img, 
                                                                            binary=binary,
                                                                            resize_factor=resize_factor, 
