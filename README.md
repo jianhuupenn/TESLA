@@ -17,7 +17,7 @@ TESLA has been used for cancer genomics data analysis in numerous top-tier journ
 
 <br>
 
-![TESLA workflow](docs/asserts/images/applications.jpg)
+![TESLA applications](docs/asserts/images/applications.jpg)
 
 <br>
 
