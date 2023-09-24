@@ -12,6 +12,15 @@ TESLA (Tumor Edge Structure and Lymphocyte multi-level Annotation) is a machine 
 
 <br>
 
+## Applications
+TESLA has been used for cancer genomics data analysis in numerous top-tier journals.
+
+<br>
+
+![TESLA workflow](docs/asserts/images/applications.jpg)
+
+<br>
+
 ## Usage
 
 The [**TESLA**](https://github.com/jianhuupenn/TESLA) package is an implementation of multi-level tissue annotation on the histology image with pixel-level resolution in spatial transcriptomics. With TESLA, you can:
