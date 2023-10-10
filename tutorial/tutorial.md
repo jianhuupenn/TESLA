@@ -148,7 +148,7 @@ counts.var.index=[i.upper() for i in counts.var.index]
 counts.var_names_make_unique()
 counts.raw=counts
 sc.pp.log1p(counts) # impute on log scale
-if issparse(counts.X):counts.X=counts.X.A
+if issparse(counts.X):counts.X=counts.X.A.copy()
 ```
 
 #### 4.2 Contour detection
