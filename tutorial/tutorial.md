@@ -83,7 +83,7 @@ import scanpy as sc
 import matplotlib.colors as clr
 import matplotlib.pyplot as plt
 import cv2
-import TESLAforST as tesla
+import TESLA as tesla
 from IPython.display import Image
 ```
 
