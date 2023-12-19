@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/jianhuupenn/TESLA",
     packages=setuptools.find_packages(),
-    install_requires=["torch","pandas","numpy","scipy","scanpy","anndata","sklearn", "numba"],
+    install_requires=["torch","pandas","numpy","scipy","scanpy","anndata","scikit-learn", "numba"],
     #install_requires=[],
     classifiers=[
         "Programming Language :: Python :: 3",
