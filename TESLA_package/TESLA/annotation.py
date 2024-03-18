@@ -28,7 +28,7 @@ def annotation(img,
 			train_refine=True, 
 			plot_intermedium=False,
 			target_size="small",
-			min_UMI=5):
+			min_UMI=1):
 	#-------------------------------Image band-------------------------------------------------#
 	if target_size=="small":
 		target_ratio=1/2
